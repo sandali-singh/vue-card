@@ -16,7 +16,7 @@
         <div class="profile-info">
           <h2>{{ profile.login }}</h2>
           <p>{{ profile.bio }}</p>
-          <a :href="profile.html_url" target="_blank" style="color: #000"
+          <a :href="profile.html_url" target="_blank" style="color: #caa6a6"
             >View Profile</a
           >
         </div>
@@ -41,12 +41,9 @@ export default {
   },
   methods: {
     getRandomColor() {
-      const letters = "0123456789ABCDEF";
-      let color = "#";
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
+      const grayValue = Math.floor(Math.random() * 135) + 100; // Generate random value between 0 and 255
+      const grayColor = `rgb(${grayValue}, ${grayValue}, ${grayValue})`; // Set RGB values to the same value for grayscale
+      return grayColor;
     },
   },
 };
